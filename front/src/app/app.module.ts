@@ -11,13 +11,15 @@ import { MyPrivatePageComponent } from './my-private-page/my-private-page.compon
 
 import { routes } from './routes/app.routing'
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLoginComponent,
     AuthSignupComponent,
-    MyPrivatePageComponent
+    MyPrivatePageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

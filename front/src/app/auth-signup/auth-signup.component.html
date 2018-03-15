@@ -1,5 +1,4 @@
-<h1> Authentication Sample </h1>
-<form (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
+  <form (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
   <h2> Signup </h2>
   <label> Username </label>
   <input type="text" [(ngModel)]="username" name="username"/>
@@ -13,6 +12,6 @@
   <label> Secret </label>
   <input type="text" [(ngModel)]="secret" name="secret"/>
 
-  <button type="submit"> login </button>
+  <button type="submit"> Create account </button>
 </form>
 <p class="error"> {{ error }} </p>

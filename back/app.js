@@ -8,13 +8,11 @@ const cors           = require("cors");
 const authController = require("./routes/authController");
 const session        = require("express-session");
 const passport       = require("passport");
-
 const app            = express();
-
+const mongoose = require("mongoose");
 
 // Mongoose configuration
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/angular-authentication")
+mongoose.connect("mongodb://alec:123@ds113169.mlab.com:13169/irontravel")
   .then(console.log("Connected to DB!!"))
 
 // Session

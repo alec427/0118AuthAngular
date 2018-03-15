@@ -4,9 +4,12 @@ import { AppComponent } from '../app.component';
 import { AuthLoginComponent } from '../auth-login/auth-login.component';
 import { AuthSignupComponent } from '../auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from '../my-private-page/my-private-page.component';
+import { ProfileComponent } from '../profile/profile.component';
+
 
 export const routes:Routes = [
     {path:"login" , component:AuthLoginComponent},
     {path:"signup" , component:AuthSignupComponent},
-    {path:"private", component:MyPrivatePageComponent}
+    {path:"private", component:MyPrivatePageComponent},
+    {path:"profile", component:ProfileComponent},
 ]

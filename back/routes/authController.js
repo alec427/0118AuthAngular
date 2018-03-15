@@ -8,7 +8,7 @@ const bcrypt         = require("bcrypt");
 const bcryptSalt     = 19;
 
 authController.post("/signup", (req, res, next) => {
-  if (!req.body.username || !req.body.password || !req.body.name || !req.body.secret) {
+  if (!req.body.username || !req.body.password || !req.body.name ) {
     res.status(400).json({ message: "Provide all the fields to sign up" });
   }
 
@@ -17,7 +17,7 @@ authController.post("/signup", (req, res, next) => {
       res.status(400).json({ message: "The username already exists" });
       return;
     }
-    console.log("entro!")    
+    console.log("entro!")
     let hashPass = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9), null);
     
 
@@ -30,20 +30,6 @@ authController.post("/signup", (req, res, next) => {
 
     console.log(newUser);
 
-//Vieja forma de guardar un User
-
-    // newUser.save((err) => {
-    //   if (err) { res.status(400).json({ message: "Something went wrong" }); }
-    //   else {
-    //     console.log("creating!!")
-    //     req.login(newUser, (err) => {
-    //       if (err) { return res.status(500).json({ message: "Something went wrong" }); }
-    //       res.status(200).json(req.user);
-    //     });
-    //   }
-    // });
-
-//Nueva forma de guardar el user , con Promesas
 
     newUser.save()
       .then(user => {

@@ -1,0 +1,25 @@
+<section id="main">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['signup']">Signup</a></li>
+        <li><a [routerLink]="['login']">Login</a></li>
+        <li><a [routerLink]="['profile']">Profile</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+
+      </ul>
+    </div>
+  </nav>
+  <body>
+    
+  </body>
+</section>
+<router-outlet></router-outlet>
