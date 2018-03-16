@@ -1,9 +1,7 @@
 const express        = require("express");
 const authController = express.Router();
 const passport       = require("passport");
-
 const User           = require("../models/user");
-
 const bcrypt         = require("bcrypt");
 const bcryptSalt     = 19;
 
@@ -71,5 +69,15 @@ authController.get("/private", (req, res) => {
   return res.status(403).json({ message: "Unauthorized" });
 });
 
+authController.get("/delete/:id", (req, res) => {
+  User.findByIdAndRemove(req.params.id)
+  .then(lists=>res.status(200).json(lists))
+  .catch(e=>res.status(500).send(e));
+});
 
+authController.post("/update/:id", (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .then(list=>res.status(200).json(list))
+  .catch(e=>res.status(500).send(e))
+});
 module.exports = authController;

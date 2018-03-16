@@ -1,0 +1,36 @@
+<section *ngIf="step === 1" class="buttons-alec">
+    <div >
+        <button (click)="Trip.housing='House'; nextStep()"   >Click House</button>
+    </div>
+    <div   (click)="nextStep()">
+        <p>Apartment</p>
+      </div>
+</section>
+
+
+<section *ngIf="step === 2" class="buttons-alec">
+    <div [(ngModel)]="Trip.transport" value="Rental car" (click)="nextStep()">
+        <p>Rental car</p>
+      </div>
+      <div (click)="nextStep()" [(ngModel)]="Trip.transport" value="Other">
+        <p>Other</p>
+      </div>
+</section>
+
+<section *ngIf="step === 3" class="buttons-alec">
+    <div (click)="nextStep()" [(ngModel)]="Trip.hours" value="Night">
+        <p>Night</p>
+      </div>
+      <div (click)="nextStep()" [(ngModel)]="Trip.hours" value="Day">
+        <p>Day</p>
+      </div>
+</section>
+
+<section *ngIf="step === 4" class="buttons-alec">
+    <div (click)="option('Local food')" [(ngModel)="Trip.food" value="Local food">
+        <p>Local food</p>
+      </div>
+      <div (click)="option('My food')" [(ngModel)]="Trip.food" value="My food">
+        <p>My food</p>
+    </div>
+</section>

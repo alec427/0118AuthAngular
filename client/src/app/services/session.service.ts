@@ -41,4 +41,15 @@ export class SessionService {
       .catch(err => this.handleError(err) )
   }
 
+  delete(id){
+    return this.http.get(`${this.base_URL}/delete/${id}`, this.options)
+      .map(res=> res.json())
+      .catch(err => this.handleError(err) )
+  }
+
+  update(user, id){
+    return this.http.post(`${this.base_URL}/update/${id}`,user, this.options)
+      .map(res => res.json())
+      .catch(err=>this.handleError(err))      
+  }
 }

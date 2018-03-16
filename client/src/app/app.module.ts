@@ -9,9 +9,11 @@ import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';
 
+
 import { routes } from './routes/app.routing'
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
+import { CreatorComponent } from './creator/creator.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     AuthLoginComponent,
     AuthSignupComponent,
     MyPrivatePageComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreatorComponent
   ],
   imports: [
     BrowserModule,

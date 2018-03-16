@@ -15,4 +15,9 @@ export class AppComponent{
     .subscribe(res => this.router.navigate(['login']));
   }
 
+  delete() {
+    this.sessionS.loggedIn().subscribe(user => 
+      this.sessionS.delete(user._id)
+      .subscribe(res => this.router.navigate(['signup'])));
+  }
 }

@@ -1,0 +1,17 @@
+<p>
+  profile works!
+</p>
+Hola {{username}}
+<br>
+<button *ngIf='!updateBoolean' (click)="actEdit()">Update1</button>
+
+<div *ngIf='updateBoolean'>
+  <label>Username</label>
+<input [(ngModel)]='updatedUser.username' type='text'>
+
+<button (click)="update()">Update2</button>
+
+<button (click)="actEdit()">Return</button>
+
+<button (click)="delete()">Delete</button>
+</div>
