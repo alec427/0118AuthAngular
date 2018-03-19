@@ -34,3 +34,9 @@
         <button (click)="Trip.food='myFood'; nextStep()" >My food</button>
     </div>
 </section>
+
+<section *ngIf="step === 5" class="buttons-alec">
+      <div>
+        <button (click)="submitTrip()" >My food</button>
+    </div>
+</section>

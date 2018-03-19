@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
     email: ''
   };
   updateBoolean = false;
-  constructor(private sessionS: SessionService, private router : Router) { }
+  constructor(private sessionS: SessionService, private router: Router) { }
 
 
   ngOnInit() {
@@ -31,13 +31,13 @@ export class ProfileComponent implements OnInit {
       });
   }
   delete() {
-    this.sessionS.loggedIn().subscribe(user => 
+    this.sessionS.loggedIn().subscribe(user =>
       this.sessionS.delete(user._id)
       .subscribe(res => this.router.navigate(['../signup'])));
   }
 
   update() {
-    this.sessionS.loggedIn().subscribe(user => 
+    this.sessionS.loggedIn().subscribe(user =>
       this.sessionS.update(this.updatedUser, user._id)
       .subscribe(res => this.router.navigate(['../'])));
   }
