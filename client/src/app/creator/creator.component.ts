@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UploadTService } from '../services/upload-t.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creator',
@@ -10,14 +12,19 @@ Trip = {
   housing: '',
   transport: '',
   hours: '',
-  food: ''};
+  food: ''
+};
 step = 1;
 
-constructor() { }
+constructor(private upload: UploadTService, private router: Router ) { }
 nextStep() {
   this.step++;
-  console.log(this.Trip)
 };
+
+submitTrip() {
+  this.upload.uploadTrip(this.Trip)
+  .subscribe();
+}
 
 
 ngOnInit() {

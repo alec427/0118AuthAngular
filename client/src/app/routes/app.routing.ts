@@ -14,5 +14,5 @@ export const routes:Routes = [
     {path:"signup" , component:AuthSignupComponent},
     {path:"private", component:MyPrivatePageComponent},
     {path:"profile", component:ProfileComponent},
-    {path:"creator", component:CreatorComponent}
+    {path:"creator", component: CreatorComponent}
 ]

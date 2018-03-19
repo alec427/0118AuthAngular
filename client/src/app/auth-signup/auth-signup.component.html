@@ -9,9 +9,11 @@
   <label> Name </label>
   <input type="text" [(ngModel)]="name" name="name"/>
   <br>
-  <label> Secret </label>
-  <input type="text" [(ngModel)]="secret" name="secret"/>
+  <label> Email </label>
+  <input type="text" [(ngModel)]="email" name="email"/>
 
   <button type="submit"> Create account </button>
+
+  <p>{{message}}</p>
 </form>
 <p class="error"> {{ error }} </p>

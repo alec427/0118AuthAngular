@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { SessionService } from "./services/session.service";
+import { SessionService } from './services/session.service';
+
 
 import { AppComponent } from './app.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
@@ -14,6 +15,9 @@ import { routes } from './routes/app.routing'
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { CreatorComponent } from './creator/creator.component';
+import { UploadTService } from './services/upload-t.service';
+import { MytripComponent } from './mytrip/mytrip.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { CreatorComponent } from './creator/creator.component';
     AuthSignupComponent,
     MyPrivatePageComponent,
     ProfileComponent,
-    CreatorComponent
+    CreatorComponent,
+    MytripComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,7 @@ import { CreatorComponent } from './creator/creator.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService],
+  providers: [SessionService, UploadTService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

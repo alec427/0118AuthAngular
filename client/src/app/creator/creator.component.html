@@ -1,36 +1,36 @@
 <section *ngIf="step === 1" class="buttons-alec">
-    <div >
-        <button (click)="Trip.housing='House'; nextStep()"   >Click House</button>
+    <div>
+        <button (click)="Trip.housing='Hotel'; nextStep()" >Hotel</button>
     </div>
-    <div   (click)="nextStep()">
-        <p>Apartment</p>
-      </div>
+    <div>
+        <button (click)="Trip.housing='airbnb'; nextStep()" >AirBnB</button>
+    </div>
 </section>
 
 
 <section *ngIf="step === 2" class="buttons-alec">
-    <div [(ngModel)]="Trip.transport" value="Rental car" (click)="nextStep()">
-        <p>Rental car</p>
-      </div>
-      <div (click)="nextStep()" [(ngModel)]="Trip.transport" value="Other">
-        <p>Other</p>
-      </div>
+    <div>
+        <button (click)="Trip.transport='Car'; nextStep()" >Rental Car</button>
+    </div>
+    <div>
+        <button (click)="Trip.transport='Other'; nextStep()" >Other</button>
+    </div>
 </section>
 
 <section *ngIf="step === 3" class="buttons-alec">
-    <div (click)="nextStep()" [(ngModel)]="Trip.hours" value="Night">
-        <p>Night</p>
-      </div>
-      <div (click)="nextStep()" [(ngModel)]="Trip.hours" value="Day">
-        <p>Day</p>
-      </div>
+    <div>
+        <button (click)="Trip.hours='Night'; nextStep()" >House</button>
+    </div>
+    <div>
+        <button (click)="Trip.hours='Day'; nextStep()" >House</button>
+    </div>
 </section>
 
 <section *ngIf="step === 4" class="buttons-alec">
-    <div (click)="option('Local food')" [(ngModel)="Trip.food" value="Local food">
-        <p>Local food</p>
+    <div>
+        <button (click)="Trip.food='Local'; nextStep()" >Local food</button>
       </div>
-      <div (click)="option('My food')" [(ngModel)]="Trip.food" value="My food">
-        <p>My food</p>
+      <div>
+        <button (click)="Trip.food='myFood'; nextStep()" >My food</button>
     </div>
 </section>

@@ -12,18 +12,22 @@ export class SessionService {
   constructor(private http: Http) { }
   
   handleError(e) {
-    return Observable.throw(e.json().message);
+    console.log(e); 
+    alert(JSON.parse(e._body).message)
+    return Observable.throw(e.message);
+    //return Observable.throw(e.json().message);
   }
 
   //Primera forma de enviar datos a nuestro Back-End
   login(username,password){
     return this.http.post(`${this.base_URL}/login`,{username,password}, this.options)
       .map(res => res.json())
-      .catch(err=>this.handleError(err))
+      .catch(err=>this.handleError(err));
   }
 
 //Segunda forma de enviar datos a nuestro Back-End
   signup(formSignup){
+    //if(Object.keys(formSignup).length < 1) return;
     return this.http.post(`${this.base_URL}/signup`,formSignup, this.options)
       .map(res => res.json())
       .catch(err=>this.handleError(err))      

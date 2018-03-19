@@ -8,10 +8,13 @@ import { Router } from '@angular/router'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  username: string = "";
-  secret: string = "";
+  username: string = '';
+  email: string = '';
+  name: string = '';
+  secret: string = '';
   updatedUser = {
-    username: ''
+    username: '',
+    email: ''
   };
   updateBoolean = false;
   constructor(private sessionS: SessionService, private router : Router) { }
@@ -23,6 +26,8 @@ export class ProfileComponent implements OnInit {
         console.log(user)
         this.secret = user.secret;
         this.username = user.username;
+        this.email = user.email;
+        this.name = user.name;
       });
   }
   delete() {
